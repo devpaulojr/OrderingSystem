@@ -11,11 +11,10 @@ Nota: o instante do pedido deve ser o instante do sistema: new Date()
 ## Tabela de conteúdos
 - [Arquitetura](#arquitetura)
 - [Features](#features)
-- [Instruções de execução](#instruções-de-execução)
-- [Contribua com o projeto](#contribua-com-o-projeto)
-- [Extra](#extra---adicione-badges)
 
 ## Arquitetura
-Arquitetura desse projeto foi desenvolvida com a ferramenta de diagramas 'https://draw.io./'. 
+![Imagem da arquitetura do projeto](/Imagens/Arquitetura01.drawio.png)
 
-![Imagem da arquitetura do projeto]()
+Arquitetura desse projeto foi desenvolvida com a ferramenta de diagramas 'https://draw.io.'
+
+## Features
