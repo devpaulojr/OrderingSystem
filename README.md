@@ -27,3 +27,19 @@ Você deverá instanciar os objetos em memória da seguinte forma:
 ![Features01 drawio](/Imagens/Features01.drawio.png)
 
 ## Input_codigo
+Requisitos de entrada do projeto deve solicitar ao usuário os seguintes campos:
+
+**Dados do cliente**: 'Nome', 'Email' e 'Data de aniversário'
+
+**Dados do Pedido**: 'Status' e 'Quantidade'
+
+**Dados do item**: 'Nome', 'Preço' e 'Quantidade'
+
+![Features01 drawio](/Imagens/Input_codigo.png)
+
+## Output_codigo
+Nota: Recomendação para a otimização do codigo utilizar a classe na saida do código: StringBuilder()
+
+A saida final do código deve ser dessa seguinte forma:
+
+![Features01 drawio](/Imagens/Output_codigo.png)
