@@ -16,4 +16,6 @@ Nota: o instante do pedido deve ser o instante do sistema: new Date()
 - [Extra](#extra---adicione-badges)
 
 ## Arquitetura
-Arquitetura desse projeto foi desenvolvida com a ferramenta de diagramas 'https://draw.io./'
+Arquitetura desse projeto foi desenvolvida com a ferramenta de diagramas 'https://draw.io./'. 
+
+![Imagem da arquitetura do projeto]()
