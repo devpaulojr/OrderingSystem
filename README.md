@@ -11,11 +11,19 @@ Nota: o instante do pedido deve ser o instante do sistema: new Date()
 ## Tabela de conteúdos
 - [Arquitetura](#arquitetura)
 - [Features](#features)
+- [Input_codigo](#input_codigo)
+- [Output_codigo](#output_codigo)
 
 ## Arquitetura
+Arquitetura do projeto de ser instânciado na memória da seguinte forma: 
+
 ![Imagem da arquitetura do projeto](/Imagens/Arquitetura01.drawio.png)
 
 Arquitetura desse projeto foi desenvolvida com a ferramenta de diagramas 'https://draw.io.'
 
 ## Features
+Você deverá instanciar os objetos em memória da seguinte forma:
+
 ![Features01 drawio](/Imagens/Features01.drawio.png)
+
+## Input_codigo
