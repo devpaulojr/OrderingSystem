@@ -19,7 +19,7 @@ Arquitetura do projeto de ser instânciado na memória da seguinte forma:
 
 ![Imagem da arquitetura do projeto](/Imagens/Arquitetura01.drawio.png)
 
-Arquitetura desse projeto foi desenvolvida com a ferramenta de diagramas 'https://draw.io.'
+Arquitetura desse projeto foi desenvolvida com a ferramenta de diagramas 'https://draw.io'
 
 ## Features
 Você deverá instanciar os objetos em memória da seguinte forma:
@@ -38,7 +38,7 @@ Requisitos de entrada do projeto deve solicitar ao usuário os seguintes campos:
 ![Features01 drawio](/Imagens/Input_codigo.png)
 
 ## Output_codigo
-Nota: Recomendação para a otimização do codigo utilizar a classe na saida do código: StringBuilder()
+Nota: Recomendação para a otimização do codigo utilize a classe: **StringBuilder()**
 
 A saida final do código deve ser dessa seguinte forma:
 
