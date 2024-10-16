@@ -17,14 +17,14 @@ Nota: o instante do pedido deve ser o instante do sistema: new Date()
 ## Arquitetura
 Arquitetura do projeto de ser instânciado na memória da seguinte forma: 
 
-![Imagem da arquitetura do projeto](/Imagens/Arquitetura01.drawio.png)
+![Arquitetura_updated.drawio.png](Imagens%2FArquitetura_updated.drawio.png)
 
 Arquitetura desse projeto foi desenvolvida com a ferramenta de diagramas 'https://draw.io'
 
 ## Features
 Você deverá instanciar os objetos em memória da seguinte forma:
 
-![Features01 drawio](/Imagens/Features01.drawio.png)
+![Features_updated.drawio.png](Imagens%2FFeatures_updated.drawio.png)
 
 ## Input_codigo
 Requisitos de entrada do projeto deve solicitar ao usuário os seguintes campos:
