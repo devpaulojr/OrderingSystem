@@ -58,9 +58,6 @@ public class Order {
         return items;
     }
 
-    public void setItems(List<OrderItem> items){
-        this.items = items;
-    }
 
     public Product getProduct(){
         return product;
@@ -101,16 +98,21 @@ public class Order {
         sb.append("ORDER SUMMARY:" + "\n");
         sb.append("Order moment: " + momentoAtual + "\n");
         sb.append("OrderStatus :" + status + "\n");
-        sb.append("Client :" + client.getNomeCliente() + " - " + sdf.format(client.getDiaAniversarioCliente()) + " - " + client.getEmailCliente() + "\n");
+
+        sb.append("Client :"
+                + client.getNomeCliente() + " - "
+                + sdf.format(client.getDiaAniversarioCliente()) + " - "
+                + client.getEmailCliente() + "\n");
+
+        sb.append("\n");
 
         sb.append("Order items:" + "\n");
-        for(OrderItem x : items){
-            sb.append(x.getProduct().getNomeProduto() + " - $"
-                    + x.getProduct().getPrecoProduto() + ", Quantidade - "
-                    + ", indentificação do produto - " + x.getProductIndenfication().idProduto
-                    + ", categoria do produto - " +  x.getProductIndenfication().getCategoriaProduto()
-                    + x.getQuantidadeItem() + ", subtotal - $"
-                    + x.subTotalItem() + "\n");
+        for(OrderItem entidade : items){
+            sb.append("Nome do produto: " + entidade.getProduct().getNomeProduto() + "\n" +
+            "Preço do produto: " + entidade.getProduct().getPrecoProduto() + "\n" +
+            "Indetificação do produto: " + entidade.getProductIndenfication().idProduto + "\n" +
+            "Categoria do produto: " + entidade.getProductIndenfication().getCategoriaProduto() + "\n" +
+            "Subtotal: " + entidade.subTotalItem() + "\n" + "\n");
         }
 
         sb.append("\n");

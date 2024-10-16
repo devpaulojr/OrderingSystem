@@ -35,11 +35,11 @@ Requisitos de entrada do projeto deve solicitar ao usuário os seguintes campos:
 
 **Dados do item**: 'Nome', 'Preço' e 'Quantidade'
 
-![Features01 drawio](/Imagens/Input_codigo.png)
+![Input_codigo.png](Imagens%2FInput_codigo.png)
 
 ## Output_codigo
 Nota: Recomendação para a otimização do codigo utilize a classe: **StringBuilder()**
 
 A saida final do código deve ser dessa seguinte forma:
 
-![Features01 drawio](/Imagens/Output_codigo.png)
+![Output_codigo.png](Imagens%2FOutput_codigo.png)

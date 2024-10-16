@@ -53,6 +53,7 @@ public class Main {
         //input dados list item
 
         int quantidadeLinha = 1;
+        int quantidadeEspaco = 0;
         for(int line = 0;line < quantProd; line++){
 
             System.out.println("\n");
@@ -60,7 +61,12 @@ public class Main {
             System.out.println("Digite o " + quantidadeLinha + "° Item do produto geral");
 
             System.out.print("Digite o nome do produto: ");
-            sc.nextLine();
+
+            if(quantidadeEspaco == 0){
+                sc.nextLine();
+                quantidadeEspaco ++;
+            }
+
             String nome = sc.nextLine();
 
             System.out.print("Digite o preço do produto: R$ ");
