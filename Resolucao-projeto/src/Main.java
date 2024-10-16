@@ -1,4 +1,9 @@
-import entities.*;
+import entities.Client;
+import entities.Order;
+import entities.OrderItem;
+import entities.Product;
+import entities.ProductIndenfication;
+
 import entitiesenum.OrderStatus;
 
 import java.text.ParseException;
