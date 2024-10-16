@@ -1,7 +1,4 @@
-import entities.Client;
-import entities.Order;
-import entities.OrderItem;
-import entities.Product;
+import entities.*;
 import entitiesenum.OrderStatus;
 
 import java.text.ParseException;
@@ -16,6 +13,7 @@ public class Main {
         Locale.setDefault(Locale.US);
 
         Scanner sc = new Scanner(System.in);
+
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -60,13 +58,19 @@ public class Main {
             sc.nextLine();
             String nome = sc.nextLine();
 
-            System.out.print("Digite o preço do produto: ");
+            System.out.print("Digite o preço do produto: R$ ");
             Double preco = sc.nextDouble();
 
             System.out.print("Digite a quantidade do produto: ");
             Integer quantidade = sc.nextInt();
 
-            OrderItem orderItem = new OrderItem(quantidade, preco, new Product(nome, preco));
+            System.out.print("Digite a categoria do produto: ");
+            sc.nextLine();
+            String categoria = sc.nextLine();
+
+            OrderItem orderItem = new OrderItem(quantidade, preco, new Product(nome, preco),
+                    new ProductIndenfication(nome, preco, categoria));
+
 
             order.addItem(orderItem);
 

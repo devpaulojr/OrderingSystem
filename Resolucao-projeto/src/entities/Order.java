@@ -105,7 +105,12 @@ public class Order {
 
         sb.append("Order items:" + "\n");
         for(OrderItem x : items){
-            sb.append(x.getProduct().getNomeProduto() + " - $" + x.getProduct().getPrecoProduto() + ", Quantidade - " + x.getQuantidadeItem() + ", subtotal - $" + x.subTotalItem() + "\n");
+            sb.append(x.getProduct().getNomeProduto() + " - $"
+                    + x.getProduct().getPrecoProduto() + ", Quantidade - "
+                    + ", indentificação do produto - " + x.getProductIndenfication().idProduto
+                    + ", categoria do produto - " +  x.getProductIndenfication().getCategoriaProduto()
+                    + x.getQuantidadeItem() + ", subtotal - $"
+                    + x.subTotalItem() + "\n");
         }
 
         sb.append("\n");
