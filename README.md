@@ -33,7 +33,7 @@ Requisitos de entrada do projeto deve solicitar ao usuário os seguintes campos:
 
 **Dados do Pedido**: 'Status' e 'Quantidade'
 
-**Dados do item**: 'Nome', 'Preço' e 'Quantidade'
+**Dados do item**: 'Nome', 'Preço', 'Quantidade' e 'categoria'
 
 ![Input_codigo.png](Imagens%2FInput_codigo.png)
 
