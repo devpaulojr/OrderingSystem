@@ -1,10 +1,10 @@
-import entities.Client;
-import entities.Order;
-import entities.OrderItem;
-import entities.Product;
-import entities.ProductIndenfication;
+import model.entities.Client;
+import model.entities.Order;
+import model.entities.OrderItem;
+import model.entities.Product;
+import model.entities.ProductIndenfication;
 
-import entitiesenum.OrderStatus;
+import model.entitiesenum.OrderStatus;
 
 import java.text.ParseException;
 import java.util.Date;

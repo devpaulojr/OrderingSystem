@@ -1,7 +1,6 @@
-package entities;
+package model.entities;
 
-import entitiesenum.OrderStatus;
-import entities.Product;
+import model.entitiesenum.OrderStatus;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
