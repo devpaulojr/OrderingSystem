@@ -81,6 +81,8 @@ public class Main {
 
             OrderItem orderItem = new OrderItem(quantidade, preco, new Product(nome, preco),
                     new ProductIndenfication(nome, preco, categoria));
+            
+            
 
 
             order.addItem(orderItem);
