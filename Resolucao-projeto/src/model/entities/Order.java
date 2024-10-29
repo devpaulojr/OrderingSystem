@@ -12,7 +12,7 @@ public class Order {
     public static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     private Date momentoAtual;
-    private OrderStatus status;
+    protected OrderStatus status;
 
     private Client client;
     private Product product;
@@ -91,33 +91,14 @@ public class Order {
     }
 
     @Override
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
-
-        sb.append("ORDER SUMMARY:" + "\n");
-        sb.append("Order moment: " + momentoAtual + "\n");
-        sb.append("OrderStatus :" + status + "\n");
-
-        sb.append("Client :"
-                + client.getNomeCliente() + " - "
-                + sdf.format(client.getDiaAniversarioCliente()) + " - "
-                + client.getEmailCliente() + "\n");
-
-        sb.append("\n");
-
-        sb.append("Order items:" + "\n");
-        for(OrderItem entidade : items){
-            sb.append("Nome do produto: " + entidade.getProduct().getNomeProduto() + "\n" +
-            "Preço do produto: " + String.format("%.2f", entidade.getProduct().getPrecoProduto()) + "\n" +
-            "Subtotal: " + String.format("%.2f", entidade.subTotalItem()) + "\n" + "\n");
-        }
-
-        sb.append("\n");
-        sb.append("Total price: $ ");
-        sb.append(String.format("%.2f", totalItem()));
-
-
-        return sb.toString();
-
+    public String toString() {
+        return "Order{" +
+                "momentoAtual=" + momentoAtual +
+                ", status=" + status +
+                ", client=" + client +
+                ", product=" + product +
+                ", orderItem=" + orderItem +
+                ", items=" + items +
+                '}';
     }
 }

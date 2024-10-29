@@ -1,6 +1,6 @@
 package model.entities;
 
-public class Product {
+public abstract class Product {
 
     private String nomeProduto;
     private Double precoProduto;
@@ -30,4 +30,14 @@ public class Product {
         this.precoProduto = precoProduto;
     }
 
+    public Integer getIdEstabelecimento(){
+        return idEstabelecimento;
+    }
+
+    @Override
+    public String toString() {
+        return "nome: " + getNomeProduto() + "\n"
+                + "preço: " + getPrecoProduto() + "\n"
+                + "id estabelecimento: " + getIdEstabelecimento();
+    }
 }

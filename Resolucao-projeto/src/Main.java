@@ -3,6 +3,7 @@ import model.entities.*;
 import model.entitiesenum.OrderStatus;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
@@ -14,7 +15,6 @@ public class Main {
         Locale.setDefault(Locale.US);
 
         Scanner sc = new Scanner(System.in);
-
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -77,6 +77,7 @@ public class Main {
                 if(consumivel_Eletronico == 'E'){
 
                     System.out.print("Digite o sistema operacional do aparelho: ");
+                    sc.nextLine();
                     String sistemaOperacional = sc.nextLine();
 
                     System.out.print("Digite a potência eletrica do aparelho: ");
@@ -84,6 +85,8 @@ public class Main {
 
                     OrderItem orderItem = new OrderItem(quantidadeProduto, precoProduto,
                             new ElectronicProduct(nomeProduto, precoProduto, sistemaOperacional, potenciaEletrica));
+
+                    System.out.println(orderItem);
 
                 }
                 else{
@@ -93,20 +96,19 @@ public class Main {
 
                     System.out.print("Digite a data de vencimento do produto: ");
                     Date dataVencimento = sdf.parse(sc.next());
-
-                    OrderItem orderItem = new OrderItem(quantidadeProduto, precoProduto,
-                            new ConsumableProduct(nomeProduto, precoProduto, pesoLiquido, dataVencimento));
                 }
 
 
-                quantidadeLinha++;
 
+                quantidadeLinha++;
             }
         }
         catch (ParseException error){
             System.out.println("Error - data");
         }
-
+        catch (RuntimeException error){
+            error.printStackTrace();
+        }
 
         sc.close();
 

@@ -32,4 +32,14 @@ public class ElectronicProduct extends Product{
         this.potenciaEletrica = potenciaEletrica;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Caracteristicas do produto eletrônico:" + "\n"
+        + "Sistema operacional: " + getSistemaOperacional() + "\n"
+        + "Potência eletrica: " + getPotenciaEletrica());
+
+        return sb.toString();
+    }
 }

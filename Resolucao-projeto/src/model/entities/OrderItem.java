@@ -17,6 +17,7 @@ public class OrderItem {
         this.product = product;
     }
 
+
     public Integer getQuantidadeItem() {
         return quantidadeItem;
     }
@@ -44,4 +45,18 @@ public class OrderItem {
     public Double subTotalItem(){
         return quantidadeItem * precoItem;
     }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Sumário do pedido:" + "\n");
+        sb.append("nome: " + getProduct().getNomeProduto() + "\n"
+        + "preço: " + getProduct().getPrecoProduto() + "\n"
+        + "id estabelecimento: " + getProduct().getIdEstabelecimento() + "\n"
+        + product);
+
+        return sb.toString();
+    }
+
 }

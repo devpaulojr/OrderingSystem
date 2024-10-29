@@ -10,6 +10,9 @@ public class ConsumableProduct extends Product{
     private Double pesoLiquido;
     private Date dataVencimento;
 
+    public ConsumableProduct(){
+        super();
+    }
 
     public ConsumableProduct(String nomeProduto, Double precoProduto, Double pesoLiquido, Date dataVencimento){
         super(nomeProduto, precoProduto);
@@ -23,5 +26,13 @@ public class ConsumableProduct extends Product{
 
     public Date getDataVencimento(){
         return dataVencimento;
+    }
+
+    @Override
+    public String toString() {
+        return "ConsumableProduct{" +
+                "pesoLiquido=" + pesoLiquido +
+                ", dataVencimento=" + dataVencimento +
+                '}';
     }
 }
