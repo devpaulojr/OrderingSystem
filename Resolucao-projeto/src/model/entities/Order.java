@@ -109,8 +109,6 @@ public class Order {
         for(OrderItem entidade : items){
             sb.append("Nome do produto: " + entidade.getProduct().getNomeProduto() + "\n" +
             "Preço do produto: " + String.format("%.2f", entidade.getProduct().getPrecoProduto()) + "\n" +
-            "Indetificação do produto: " + entidade.getProductIndenfication().idProduto + "\n" +
-            "Categoria do produto: " + entidade.getProductIndenfication().getCategoriaProduto() + "\n" +
             "Subtotal: " + String.format("%.2f", entidade.subTotalItem()) + "\n" + "\n");
         }
 

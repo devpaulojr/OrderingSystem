@@ -4,6 +4,7 @@ public class Product {
 
     private String nomeProduto;
     private Double precoProduto;
+    private Integer idEstabelecimento = 40028922;
 
     public Product() {
     }
@@ -28,4 +29,5 @@ public class Product {
     public void setPrecoProduto(Double precoProduto){
         this.precoProduto = precoProduto;
     }
+
 }
