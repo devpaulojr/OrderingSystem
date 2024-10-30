@@ -30,9 +30,13 @@ public class ConsumableProduct extends Product{
 
     @Override
     public String toString() {
-        return "ConsumableProduct{" +
-                "pesoLiquido=" + pesoLiquido +
-                ", dataVencimento=" + dataVencimento +
-                '}';
+
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Caracteristicas do produto comsumível:" + "\n"
+                + "Peso liquido: " + getPesoLiquido() + " ml" + "\n"
+                + "Data de vencimento: " + sdf.format(getDataVencimento()));
+
+        return sb.toString();
     }
 }

@@ -80,22 +80,37 @@ public class Main {
                     sc.nextLine();
                     String sistemaOperacional = sc.nextLine();
 
-                    System.out.print("Digite a potência eletrica do aparelho: ");
+                    System.out.print("Digite a potência eletrica do aparelho [W]: ");
                     Double potenciaEletrica = sc.nextDouble();
 
                     OrderItem orderItem = new OrderItem(quantidadeProduto, precoProduto,
                             new ElectronicProduct(nomeProduto, precoProduto, sistemaOperacional, potenciaEletrica));
 
+                    //output final código
+                    System.out.println("\n");
+                    System.out.println(order);
+
+                    System.out.println("\n");
                     System.out.println(orderItem);
 
                 }
                 else{
 
-                    System.out.print("Digite o peso liquido do produto: ");
+                    System.out.print("Digite o peso liquido do produto [ml]: ");
                     Double pesoLiquido = sc.nextDouble();
 
                     System.out.print("Digite a data de vencimento do produto: ");
                     Date dataVencimento = sdf.parse(sc.next());
+
+                    OrderItem orderItem = new OrderItem(quantidadeProduto, precoProduto,
+                            new ConsumableProduct(nomeProduto, precoProduto, pesoLiquido, dataVencimento));
+
+                    //output final código
+                    System.out.println("\n");
+                    System.out.println(order);
+
+                    System.out.println("\n");
+                    System.out.println(orderItem);
                 }
 
 

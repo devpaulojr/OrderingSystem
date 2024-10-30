@@ -92,13 +92,9 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "momentoAtual=" + momentoAtual +
-                ", status=" + status +
-                ", client=" + client +
-                ", product=" + product +
-                ", orderItem=" + orderItem +
-                ", items=" + items +
-                '}';
+        return "Sumário do cliente:" + "\n" +
+                "Momento do pedido: " + getMomentoAtual() + "\n" +
+                "Status do pedido: " + getStatus() + "\n" +
+                "Dados do cliente: " + getClient();
     }
 }

@@ -38,7 +38,7 @@ public class ElectronicProduct extends Product{
 
         sb.append("Caracteristicas do produto eletrônico:" + "\n"
         + "Sistema operacional: " + getSistemaOperacional() + "\n"
-        + "Potência eletrica: " + getPotenciaEletrica());
+        + "Potência eletrica: " + String.format("%.1f", getPotenciaEletrica()) + " W");
 
         return sb.toString();
     }

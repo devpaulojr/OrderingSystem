@@ -1,8 +1,11 @@
 package model.entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Client {
+
+    public static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     private String nomeCliente;
     private String emailCliente;
@@ -39,5 +42,14 @@ public class Client {
 
     public void setDiaAniversarioCliente(Date diaAniversarioCliente){
         this.diaAniversarioCliente = diaAniversarioCliente;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(getNomeCliente() + " - " + sdf.format(getDiaAniversarioCliente()) + " - " + getEmailCliente());
+
+        return sb.toString();
     }
 }

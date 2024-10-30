@@ -54,7 +54,8 @@ public class OrderItem {
         sb.append("nome: " + getProduct().getNomeProduto() + "\n"
         + "preço: " + getProduct().getPrecoProduto() + "\n"
         + "id estabelecimento: " + getProduct().getIdEstabelecimento() + "\n"
-        + product);
+        + product + "\n"
+        + "SubTotal do item: R$ " + String.format("%.2f", subTotalItem()));
 
         return sb.toString();
     }
