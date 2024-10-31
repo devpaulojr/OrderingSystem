@@ -33,7 +33,9 @@ Requisitos de entrada do projeto deve solicitar ao usuário os seguintes campos:
 
 **Dados do Pedido**: 'Status' e 'Quantidade'
 
-**Dados do item**: 'Nome', 'Preço', 'Quantidade' e 'categoria'
+**Dados do produto eletrônico**: 'Nome', 'Preço', 'Quantidade', 'Sistema operacional' e 'Potência eletrica [w]'
+
+**Dados do produto consumíveis**: 'Nome', 'Preço', 'Quantidade', 'Peso liquido [ml]' e 'Data de vencimento'
 
 ![Input_codigo.png](Imagens%2FInput_codigo.png)
 

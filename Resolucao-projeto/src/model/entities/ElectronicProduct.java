@@ -1,5 +1,7 @@
 package model.entities;
 
+import model.exception.DomainException;
+
 public class ElectronicProduct extends Product{
 
     private String sistemaOperacional;
@@ -10,8 +12,17 @@ public class ElectronicProduct extends Product{
     }
 
     public ElectronicProduct(String nomeProduto, Double precoProduto, String sistemaOperacional,
-                             Double potenciaEletrica){
+                             Double potenciaEletrica) throws DomainException{
         super(nomeProduto, precoProduto);
+
+        if(precoProduto < 0){
+            throw new DomainException("Preço do produto é negativo!!");
+        }
+
+        if(potenciaEletrica < 0){
+            throw new DomainException("Potência de eletricidade negativo!!");
+        }
+
         this.sistemaOperacional = sistemaOperacional;
         this.potenciaEletrica = potenciaEletrica;
     }
@@ -33,7 +44,7 @@ public class ElectronicProduct extends Product{
     }
 
     @Override
-    public String toString() {
+    public String toString()  {
         StringBuilder sb = new StringBuilder();
 
         sb.append("Caracteristicas do produto eletrônico:" + "\n"

@@ -1,12 +1,10 @@
 import model.entities.*;
 
 import model.entitiesenum.OrderStatus;
-
+import model.exception.DomainException;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
-import java.util.Scanner;
+
+import java.util.*;
 import java.text.SimpleDateFormat;
 
 public class Main {
@@ -16,11 +14,16 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
+
+        ArrayList<OrderItem> orderItemArrayList = new ArrayList<>();
+        ArrayList<Order> orderArrayList = new ArrayList<>();
+
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-        //input dados cliente
+        Order order = null;
+        try {
+            //Entrada de dados (Cliente)
 
-        try{
             System.out.println("Digite os dados do cliente");
 
             System.out.print("Digite o nome do cliente: ");
@@ -34,26 +37,27 @@ public class Main {
 
             Client client = new Client(nomecliente, emailCliente, dataAniversarioCliente);
 
-            // input dados pedido
-
             System.out.println("\n");
+
+            // Entrada de dados (Pedido)
+
+            System.out.println();
 
             System.out.print("Digite o Status do pedido: ");
             String statusPedido = sc.next();
             OrderStatus orderStatus = OrderStatus.valueOf(statusPedido);
 
             System.out.print("Digite a quantidade de produtos: ");
-            Integer quantProd = sc.nextInt();
+            int quantProd = sc.nextInt();
 
-            Order order = new Order(new Date(), orderStatus, client);
-
-            //input dados dos items
+            order = new Order(new Date(), orderStatus, client);
 
             int quantidadeLinha = 1;
-            int quantidadeEspaco = 0;
-            for(int line = 0;line < quantProd; line++) {
+            for (int line = 0; line < quantProd; line++) {
 
                 System.out.println("\n");
+
+                //Entrada de dados (Items)
 
                 System.out.println("Digite o " + quantidadeLinha + "° Item do produto geral");
 
@@ -61,11 +65,8 @@ public class Main {
                 char consumivel_Eletronico = sc.next().toUpperCase().charAt(0);
 
                 System.out.print("Digite o nome do produto: ");
+                sc.nextLine();
 
-                if (quantidadeEspaco == 0) {
-                    sc.nextLine();
-                    quantidadeEspaco++;
-                }
                 String nomeProduto = sc.nextLine();
 
                 System.out.print("Digite o preço do produto: R$ ");
@@ -74,7 +75,7 @@ public class Main {
                 System.out.print("Digite a quantidade do produto: ");
                 Integer quantidadeProduto = sc.nextInt();
 
-                if(consumivel_Eletronico == 'E'){
+                if (consumivel_Eletronico == 'E') {
 
                     System.out.print("Digite o sistema operacional do aparelho: ");
                     sc.nextLine();
@@ -86,15 +87,10 @@ public class Main {
                     OrderItem orderItem = new OrderItem(quantidadeProduto, precoProduto,
                             new ElectronicProduct(nomeProduto, precoProduto, sistemaOperacional, potenciaEletrica));
 
-                    //output final código
-                    System.out.println("\n");
-                    System.out.println(order);
+                    orderArrayList.add(order);
+                    orderItemArrayList.add(orderItem);
 
-                    System.out.println("\n");
-                    System.out.println(orderItem);
-
-                }
-                else{
+                } else {
 
                     System.out.print("Digite o peso liquido do produto [ml]: ");
                     Double pesoLiquido = sc.nextDouble();
@@ -105,27 +101,53 @@ public class Main {
                     OrderItem orderItem = new OrderItem(quantidadeProduto, precoProduto,
                             new ConsumableProduct(nomeProduto, precoProduto, pesoLiquido, dataVencimento));
 
-                    //output final código
-                    System.out.println("\n");
-                    System.out.println(order);
-
-                    System.out.println("\n");
-                    System.out.println(orderItem);
+                    orderArrayList.add(order);
+                    orderItemArrayList.add(orderItem);
                 }
-
-
 
                 quantidadeLinha++;
             }
+
+        } catch (DomainException error) {
+            System.out.println("\n");
+            System.out.println("Error - " + error.getMessage());
         }
-        catch (ParseException error){
-            System.out.println("Error - data");
+        catch (ParseException error) {
+            System.out.println("\n");
+            System.out.println("Error - Date");
         }
-        catch (RuntimeException error){
-            error.printStackTrace();
+        catch (RuntimeException error) {
+            System.out.println("Error - não inspecionado");
+        }
+        finally {
+            sc.close();
         }
 
-        sc.close();
+        //Saida do código final
 
+        System.out.println("\n");
+        int interromper = 0;
+        for (Order x : orderArrayList) {
+
+            if (interromper > 0) {
+                break;
+            } else {
+                System.out.println(x);
+                System.out.println("\n");
+                interromper++;
+            }
+        }
+
+        for (OrderItem x : orderItemArrayList) {
+            System.out.println(x);
+            System.out.println("\n");
+        }
+
+        Double soma = 0.0;
+       for (OrderItem x : orderItemArrayList){
+           soma += x.totalItem();
+       }
+
+       System.out.println("Valor total dos item(s): " + soma);
     }
 }

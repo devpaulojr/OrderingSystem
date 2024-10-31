@@ -1,6 +1,7 @@
 package model.entities;
 
 import model.entitiesenum.OrderStatus;
+import model.exception.DomainException;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -82,19 +83,11 @@ public class Order {
         items.remove(item);
     }
 
-    public Double totalItem(){
-        Double soma = 0.0;
-        for(OrderItem linha : items){
-            soma += linha.subTotalItem();
-        }
-        return soma;
-    }
-
     @Override
     public String toString() {
         return "Sumário do cliente:" + "\n" +
                 "Momento do pedido: " + getMomentoAtual() + "\n" +
                 "Status do pedido: " + getStatus() + "\n" +
-                "Dados do cliente: " + getClient();
+                "Dados do cliente: " + getClient() + "\n";
     }
 }
