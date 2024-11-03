@@ -58,7 +58,6 @@ public class Order {
         return items;
     }
 
-
     public Product getProduct(){
         return product;
     }
@@ -85,9 +84,13 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Sumário do cliente:" + "\n" +
-                "Momento do pedido: " + getMomentoAtual() + "\n" +
-                "Status do pedido: " + getStatus() + "\n" +
-                "Dados do cliente: " + getClient() + "\n";
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Sumário do cliente: " + "\n"
+        + "Momento do pedido: " + getMomentoAtual() + "\n"
+        + "Status do pedido: " + getStatus() + "\n"
+        + "Dados do cliente: " + getClient() + "\n");
+
+        return  sb.toString();
     }
 }

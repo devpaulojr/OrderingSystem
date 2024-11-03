@@ -48,7 +48,8 @@ public class Client {
     public String toString(){
         StringBuilder sb = new StringBuilder();
 
-        sb.append(getNomeCliente() + " - " + sdf.format(getDiaAniversarioCliente()) + " - " + getEmailCliente());
+        sb.append(getNomeCliente() + " - " + sdf.format(getDiaAniversarioCliente()) +
+                " - " + getEmailCliente());
 
         return sb.toString();
     }

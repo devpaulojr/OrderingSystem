@@ -36,8 +36,12 @@ public abstract class Product {
 
     @Override
     public String toString() {
-        return "nome: " + getNomeProduto() + "\n"
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("nome: " + getNomeProduto() + "\n"
                 + "preço: " + getPrecoProduto() + "\n"
-                + "id estabelecimento: " + getIdEstabelecimento();
+                + "id estabelecimento: " + getIdEstabelecimento());
+
+        return sb.toString();
     }
 }
